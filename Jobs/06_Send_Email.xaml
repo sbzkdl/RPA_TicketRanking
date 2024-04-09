@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1207,826</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,826</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,8 +118,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="UiPath_Gmail" CacheStrategy="None" DisplayName="Get Credential" FolderPath="sbzkdl@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="354,183" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[strPW]" Username="[strEmail]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[&quot;안녕하세요.&quot; + Environment.NewLine + &quot;&quot; + Environment.NewLine + &quot;예스24 티켓랭킹 파일 송부드립니다.&quot; + Environment.NewLine + &quot;&quot; + Environment.NewLine + &quot;감사합니다.&quot;]" DisplayName="Send SMTP Mail Message" Email="[strEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,234" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[strPW]" Server="smtp.gmail.com" Subject="[&quot;[티켓랭킹] &quot; + Today.ToString(&quot;yyyy/MM/dd&quot;) + &quot; 예스24 티켓랭킹 과제 제출_박건후&quot;]" To="[in_Config(&quot;과제제출&quot;).ToString]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="UiPath_Gmail" CacheStrategy="None" DisplayName="로그인 정보 | Get Credential" FolderPath="sbzkdl@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="354,183" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[strPW]" Username="[strEmail]" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[&quot;안녕하세요.&quot; + Environment.NewLine + &quot;&quot; + Environment.NewLine + &quot;예스24 티켓랭킹 파일 송부드립니다.&quot; + Environment.NewLine + &quot;&quot; + Environment.NewLine + &quot;감사합니다.&quot;]" DisplayName="메일 보내기 | Send SMTP Mail Message" Email="[strEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,234" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[strPW]" Server="smtp.gmail.com" Subject="[&quot;[티켓랭킹] &quot; + Today.ToString(&quot;yyyy/MM/dd&quot;) + &quot; 예스24 티켓랭킹 과제 제출_박건후&quot;]" To="[in_Config(&quot;과제제출&quot;).ToString]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">["Data\Output\티켓랭킹_" + Today.ToString("yyyyMMdd") + "_박건후.xlsx"]</InArgument>

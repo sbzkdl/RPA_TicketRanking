@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>502,1591</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,1591</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_02__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,7 +124,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get List Start. .&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 예스24 티켓" sap:VirtualizedContainerService.HintSize="450,526" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="05209552-4e90-4f2d-8a5b-a986abf6483e" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="목록 추출 | Use Browser Chrome: 예스24 티켓" sap:VirtualizedContainerService.HintSize="450,526" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="05209552-4e90-4f2d-8a5b-a986abf6483e" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -136,7 +136,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Text '랭킹 전체'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="05209552-4e90-4f2d-8a5b-a986abf6483e" TextString="[str목록]" Version="V3">
+            <uix:NGetText DisplayName="전체 페이지 텍스트 추출 | Get Text '랭킹 전체'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="05209552-4e90-4f2d-8a5b-a986abf6483e" TextString="[str목록]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="http://ticket.yes24.com/New/Rank/Ranking.aspx" DesignTimeRectangle="8, 315, 1903, 8539" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl class='content-min-wrap' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='content-min-wrap' tag='DIV' type='' aaname=' &amp;#x9; &amp;#x9; &amp;#x9;                         ' /&gt;" Guid="7fff9324-5bb7-41de-9d5a-23910085188d" InformativeScreenshot="00ef0c27de7e7959bc715d71c5ccebd8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='예스24 티켓' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NGetText.Target>
@@ -148,7 +148,7 @@
         <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU6SURBVGhDxZnNSy5VHMeft+u91zTBEkKslOIqYWCmt7sQ3LQQVHShgYtEN+LCFwQjETfWQkUQMTHLP0BUCFFzIbRIQVRcuBGihRD4gkqSLyiZ+ut8j2ecZ/T3zMyZZ7z3Cx94PPOdc37jnLffmYBPyhTUC34W/C7YFZwJSIHfKMM1eODFPW9U6YJvBZsCI1BdcC/qQF2vTR8JfhJcCrigvIC6UCfqfjQ9F3wn+FfABeEHqBttoC1f9angDwHX6GOAttCmL6oVXAi4hh4TtIm249I3Aq5yVzwLBei5ILoMf6M8uswBxOBJcQWfEg7Qrzlh+v79kKX8x6wQ/fIibClzgfZD4NVxFbki7UmA/swLE72K0P7nEXqZFJTlP2SG6OJlhK5Fed8H1gdzgevuhMETV5//+FmQ/vsiIh/g74IIPQkGKCjKZ7JvHwp89c7tQ2mAmBwHNqavuGeb5vdCd4Gu5IYp82mQXoiH+uuz27J/CiP09bvaDwAQm+0UizmYu1GLV6LLHIr//IHoPtH/6d8+CdOpCH5ejI1ovyaIkRVWQV8WqbfFAP4yJUgfPg1QkvhtlON3fVqI3tKbhe6DGNkVG0s5d0NMwuEw1dXVPSA9PZ31G2RlZbH3JScns34GxGoRNlPae5uCggLilJuby/oNent7ldPU1dUVJSUlsX4GxGrZAGJHyBltaW9vV82bOjo6omDQfoCurq4qt6mVlRXWawNivpOnLfHc3Jxq3tT09DTrNUhJSaHr62vlNtXX18f6bUDMUkgsOIMt6P/Hx8eqeVN4K5zfoKysTDmtQjnnd0AmRciOuIu2xOr/hYWFrN9gcHBQOU3hjeDNcH4HELtM8biLtnD9/+zsjCKRCOs32NjYUG5T6+vrrNcFiF3mqdxFW7j+v7CwwHoN0tLSlNOqgYEB1u8CxC6Tbe5iTEKhENv/u7q6WL9BTU2NclpVWVnJ+l2A2C2nB67IyclRTVtVXFzM+g2mpqaU09TNzQ2lpqayfhcgdvaCLdXV1ap5UwgkMTGR9QOszpeXl8ptCmOC82vAFtrS0tKimje1s7PDeg3GxsaU06rh4WHWr4F+F+rs7FTNmzo4OGC9oKKiQr4hTlVVVew9LpFdSHsQNzQ0qOatys/Pf+Ctra2li4sL5XgozEz379FADmLtabSoqEg1b9X29jY1NTXJ/yrWibW1NXWF1+bmJlu/BnIa1V7IsI3Y399XYXjX0NAQW78GciHztJVobW1VYThraWlJ/bKqpKSErVsDuZXwtJnDlnl0dFSFwmt3d5fKy8tpYmJClZja29uTb5KrW4O7E27PJ8ylpaVyW4E8ADo9PaXFxUVqbm6W60J2drZMVu7LadV2wd12GvKU0DiRkJDAdp/Dw0Ovu89oLAmNp5TSDuS3SG441dfXs/do8CClhLST+u7ubsrLy5ObO6MsIyOD2tra5MrMaXx83FKHRx4k9ZDWsUr0hg79fmtry3FqXV5ett0vuSTmsQrk+mCrsbFRheVO8/PzfgQPYh5sQa6PFicnJ1Vo9jo/P6eOjg4/pkzgeLQIOR7uYg3ATGKnk5MTGhkZcTzk0sDV4a4h2+N1dIWenh6anZ2V+Sz29Nj3zMzMUH9/v8ywfOou0Wh/rYnrA4fPvJmvND7hOXhDeHVxffDwCNrU7jaxhMET94cPDdCW6wHrVpi+MAf78g0hBqgbbThOlfEIqyCWcj/3TqgLdcZcYR9D2ExhR+h5Ky7AvajjwcbsdQuJBbIjpHjIU5FsR5924DfKcA0eeO+SEe8KBP4HO9Oni9MnRwcAAAAASUVORK5CYII=" InformativeScreenshot="69a30dcec6be6aa562bd1edfc84ffd5f.jpg" Selector="&lt;html app='chrome.exe' title='예스24 티켓' /&gt;" Title="예스24 티켓" Url="[in_Config(&quot;yes24_URL&quot;).ToString]" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Assign sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="리스트 선언 | Assign" sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[out_list목록]</OutArgument>
       </Assign.To>
@@ -156,7 +156,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,445" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, 7)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="범위 설정 | For Each" sap:VirtualizedContainerService.HintSize="450,445" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, 7)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -168,7 +168,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="354,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[str목록.Split(&quot;&#x9;&#x9;&quot;)(currentNumber).Trim.ToString]" List="[out_list목록]" />
+            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="리스트 삽입 | Append Item to List" sap:VirtualizedContainerService.HintSize="354,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[str목록.Split(&quot;&#x9;&#x9;&quot;)(currentNumber).Trim.ToString]" List="[out_list목록]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>

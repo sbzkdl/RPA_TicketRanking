@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1207,826</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,826</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_CopyFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -94,7 +94,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Start. .&quot;]" />
-    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[&quot;Data\Output\티켓랭킹_&quot; + Today.ToString(&quot;yyyyMMdd&quot;) + &quot;_박건후.xlsx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="354,194" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;원본파일&quot;).ToString]" />
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[&quot;Data\Output\티켓랭킹_&quot; + Today.ToString(&quot;yyyyMMdd&quot;) + &quot;_박건후.xlsx&quot;]" DisplayName="파일 복제 | Copy File" sap:VirtualizedContainerService.HintSize="354,194" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;원본파일&quot;).ToString]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Finish. .&quot;]" />
   </Sequence>
 </Activity>
