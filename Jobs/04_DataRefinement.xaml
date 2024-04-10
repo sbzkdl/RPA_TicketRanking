@@ -122,7 +122,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xD;&#xA;&#x9;CurrentRow(&quot;순위&quot;).ToString.Trim, &#xD;&#xA;&#x9;CurrentRow(&quot;제목&quot;).ToString.Trim,&#xD;&#xA;&#x9;System.Text.RegularExpressions.Regex.Split(CurrentRow(&quot;기간장소&quot;).ToString, &quot;\n&quot;)(0).Trim, &#xD;&#xA;&#x9;System.Text.RegularExpressions.Regex.Split(CurrentRow(&quot;기간장소&quot;).ToString, &quot;\n&quot;)(1).Trim, &#xD;&#xA;&#x9;CurrentRow(&quot;예매율&quot;).ToString.Trim&#xD;&#xA;&#x9;}]" DataTable="[out_dt랭킹Final]" DisplayName="분할 데이터 삽입 | Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;&#x9;CurrentRow(&quot;순위&quot;).ToString.Trim, &#xA;&#x9;CurrentRow(&quot;제목&quot;).ToString.Trim,&#xA;&#x9;System.Text.RegularExpressions.Regex.Split(CurrentRow(&quot;기간장소&quot;).ToString, &quot;\n&quot;)(0).Trim, &#xA;&#x9;System.Text.RegularExpressions.Regex.Split(CurrentRow(&quot;기간장소&quot;).ToString, &quot;\n&quot;)(1).Trim, &#xA;&#x9;CurrentRow(&quot;예매율&quot;).ToString.Trim&#xA;&#x9;}]" DataTable="[out_dt랭킹Final]" DisplayName="분할 데이터 삽입 | Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
