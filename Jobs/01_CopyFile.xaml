@@ -1,11 +1,21 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_01_CopyFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_CopyFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_strJob" Type="InArgument(x:String)" />
+    <x:Property Name="in_str일자" Type="InArgument(x:String)" />
+    <x:Property Name="in_str작성자" Type="InArgument(x:String)" />
+    <x:Property Name="out_str결과파일" Type="OutArgument(x:String)" />
   </x:Members>
+  <this:_01_CopyFile.in_strJob>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_01_CopyFile.in_strJob>
+  <this:_01_CopyFile.in_str일자>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_01_CopyFile.in_str일자>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1205,826</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>486,815</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_CopyFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -87,14 +97,27 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_01_CopyFile" sap:VirtualizedContainerService.HintSize="416,627" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_01_CopyFile" sap:VirtualizedContainerService.HintSize="496,750" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Start. .&quot;]" />
-    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[&quot;Data\Output\티켓랭킹_&quot; + Today.ToString(&quot;yyyyMMdd&quot;) + &quot;_박건후.xlsx&quot;]" DisplayName="파일 복제 | Copy File" sap:VirtualizedContainerService.HintSize="354,194" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;원본파일&quot;).ToString]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Finish. .&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Start. .&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_str결과파일]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Format(
+					in_Config("결과파일").ToString,
+					in_strJob,
+					Convert.ToDateTime(in_str일자).AddYears(3).ToString("yyyyMMdd"),
+					in_str작성자
+					)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[out_str결과파일]" DisplayName="파일 복제 | Copy File" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;원본파일&quot;).ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Flie Copy Finish. .&quot;]" />
   </Sequence>
 </Activity>

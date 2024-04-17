@@ -1,12 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_list목록" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="in_strJob" Type="InArgument(x:String)" />
+    <x:Property Name="in_str작성자" Type="InArgument(x:String)" />
+    <x:Property Name="out_str일자" Type="OutArgument(x:String)" />
+    <x:Property Name="out_str결과파일" Type="OutArgument(x:String)" />
   </x:Members>
+  <this:Initialize_Applications.in_strJob>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Initialize_Applications.in_strJob>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1207,826</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>406,665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,7 +98,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="416,447" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="416,600" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -99,14 +106,30 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\02_GetList.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\02_GetList.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\00_ReadEMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Jobs\00_ReadEMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_list목록">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="out_list목록" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str일자">[out_str일자]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_list항목">[out_list목록]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strJob">[in_strJob]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\01_CopyFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Jobs\01_CopyFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
           <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
         </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strJob">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strJob" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str일자">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_str일자" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str작성자">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str작성자" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str결과파일">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_str결과파일" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
